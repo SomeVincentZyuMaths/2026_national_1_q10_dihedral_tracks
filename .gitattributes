@@ -1,10 +1,17 @@
 # 📊 将 Markdown 视为可统计的非文档文件，纳入 GitHub 语言统计。
 *.md linguist-detectable=true linguist-documentation=false
 
-# 📊 将 JSON（package.json、tsconfig.json）纳入语言统计。
+# 📊 将 JSON（package.json、tsconfig.json、subtitles.json）纳入语言统计。
 *.json linguist-detectable=true linguist-language=JSON
 # 锁文件是机器生成的依赖清单，排除以免淹没统计。
 package-lock.json linguist-generated=true
+
+# 🎬 将字幕文件纳入 GitHub 语言统计
+# - .srt 使用 GitHub 原生 SubRip Text（暗酒红 #9e0101）
+*.srt linguist-detectable=true linguist-language="SubRip Text"
+
+# - .ass 映射为 INI（冰霜灰蓝 #d1dbe0），同时获得最地道的 [Sections] 语法高亮
+*.ass linguist-detectable=true linguist-language=INI
 
 # 📝 文本源文件统一换行符。
 * text=auto
@@ -13,6 +20,8 @@ package-lock.json linguist-generated=true
 *.html text eol=lf
 *.md text eol=lf
 *.json text eol=lf
+*.ass text eol=lf
+*.srt text eol=lf
 
 # 📦 二进制成品原样存储。
 *.png binary
