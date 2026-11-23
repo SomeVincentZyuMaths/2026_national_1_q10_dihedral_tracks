@@ -8,7 +8,7 @@ package-lock.json linguist-generated=true
 
 # 🎬 将字幕文件纳入 GitHub 语言统计
 # - .srt 使用 GitHub 原生 SubRip Text（暗酒红 #9e0101）
-*.srt linguist-detectable=true linguist-language="SubRip Text"
+*.srt linguist-detectable=true
 
 # - .ass 映射为 INI（冰霜灰蓝 #d1dbe0），同时获得最地道的 [Sections] 语法高亮
 *.ass linguist-detectable=true linguist-language=INI
