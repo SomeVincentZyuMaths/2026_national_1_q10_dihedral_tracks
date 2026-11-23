@@ -1,5 +1,5 @@
 # 📊 将 Markdown 视为可统计的非文档文件，纳入 GitHub 语言统计。
-*.md linguist-detectable=true linguist-documentation=false
+*.md linguist-detectable=true linguist-documentation=false linguist-language=Markdown
 
 # 📊 将 JSON（package.json、tsconfig.json、subtitles.json）纳入语言统计。
 *.json linguist-detectable=true linguist-language=JSON
