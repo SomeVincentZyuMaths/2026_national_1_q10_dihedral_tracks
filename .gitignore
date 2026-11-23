@@ -8,4 +8,7 @@ video/raw_recordings/
 *.webm
 audio/*.mp3
 audio/concat.txt
+public/audio/
+test_frame_*.png
+
 
