@@ -3,6 +3,7 @@ import { useCurrentFrame, useVideoConfig, staticFile, Audio } from 'remotion';
 import 'katex/dist/katex.min.css';
 import '@hanzi.pro/webfonts-lxgw-wenkai/swap/400.css';
 import '@hanzi.pro/webfonts-lxgw-wenkai/swap/500.css';
+import './labelStyles.css';
 import { computeFrameData } from './mathTimeline';
 import { RemotionThreeBridge } from './SceneBridge';
 import { SubtitleOverlay } from './SubtitleOverlay';

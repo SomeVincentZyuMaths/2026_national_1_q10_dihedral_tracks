@@ -1,0 +1,67 @@
+/* 3D 空间几何标签样式 (高对比度、清晰防遮挡、黑色描边) */
+.p3d-label {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(6, 12, 22, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #ffffff !important;
+  font-family: 'LXGW WenKai', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000,
+     0 2px 4px rgba(0, 0, 0, 0.95);
+  transition: opacity 0.15s ease;
+}
+
+/* 重点距离数值标签 (红色/高亮醒目) */
+.p3d-label.accent {
+  color: #ff5252 !important;
+  border-color: rgba(255, 82, 82, 0.55);
+  background: rgba(30, 8, 12, 0.88);
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(255, 82, 82, 0.25), 0 0 0 1px #000;
+}
+
+/* 动点 C 与相关标签 (明亮冰蓝) */
+.p3d-label.blue {
+  color: #64b5f6 !important;
+  border-color: rgba(100, 181, 246, 0.55);
+  background: rgba(8, 20, 36, 0.88);
+  font-weight: 700;
+}
+
+/* 动点 D 与垂足 (明亮水绿/青蓝) */
+.p3d-label.teal {
+  color: #4dd0e1 !important;
+  border-color: rgba(77, 208, 225, 0.55);
+  background: rgba(6, 24, 28, 0.88);
+  font-weight: 700;
+}
+
+/* 定点 A、B、二面角弧 (璀璨金黄) */
+.p3d-label.gold {
+  color: #ffd54f !important;
+  border-color: rgba(255, 213, 79, 0.55);
+  background: rgba(28, 22, 6, 0.88);
+  font-weight: 700;
+}
+
+/* 辅助说明与截面标签 (浅白/微灰) */
+.p3d-label.subtle {
+  color: #f1f5f9 !important;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(12, 18, 30, 0.85);
+  font-size: 13px;
+}
