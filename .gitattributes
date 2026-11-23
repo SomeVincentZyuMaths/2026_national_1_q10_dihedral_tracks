@@ -1,0 +1,24 @@
+# 📊 将 Markdown 视为可统计的非文档文件，纳入 GitHub 语言统计。
+*.md linguist-detectable=true linguist-documentation=false
+
+# 📊 将 JSON（package.json、tsconfig.json）纳入语言统计。
+*.json linguist-detectable=true linguist-language=JSON
+# 锁文件是机器生成的依赖清单，排除以免淹没统计。
+package-lock.json linguist-generated=true
+
+# 📝 文本源文件统一换行符。
+* text=auto
+*.ts text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+
+# 📦 二进制成品原样存储。
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.mp4 binary
