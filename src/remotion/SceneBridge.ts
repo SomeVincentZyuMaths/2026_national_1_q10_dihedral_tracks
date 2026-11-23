@@ -60,6 +60,8 @@ export class RemotionThreeBridge {
   private labelD: any;
   private labelDistance: any;
   private labelPlaneABD: any;
+  private labelO1: any;
+  private labelO2: any;
   private sectionLabel: any;
   private sectionPlaneMaterial: THREE.MeshBasicMaterial;
   private sectionLoopC: Line2;
@@ -243,7 +245,11 @@ export class RemotionThreeBridge {
     this.labelD = makeLabel('D(√3/2,y_D,½)', 'teal');
     this.labelDistance = makeLabel('CD = 3.64', 'accent');
     this.labelPlaneABD = makeLabel('平面 ABD', 'blue');
-    this.scene.add(this.labelA, this.labelB, this.labelC, this.labelD, this.labelDistance, this.labelPlaneABD);
+    this.labelO1 = makeLabel('O₁', 'blue');
+    this.labelO1.position.set(TRACKS.axialC - 0.28, -0.24, 0.28);
+    this.labelO2 = makeLabel('O₂', 'teal');
+    this.labelO2.position.set(TRACKS.axialDStart + 0.12, -0.24, 0.28);
+    this.scene.add(this.labelA, this.labelB, this.labelC, this.labelD, this.labelDistance, this.labelPlaneABD, this.labelO1, this.labelO2);
 
     this.drawProof = createProofDrawing(this.scene, this.theme);
   }
@@ -287,8 +293,29 @@ export class RemotionThreeBridge {
     this.labelDistance.element.textContent = data.isMerged ? 'CD = √3' : `CD = ${distanceCD(data.axialC, data.axialD).toFixed(2)}`;
     this.labelDistance.visible = data.stepIndex !== 2;
 
-    this.labelA.visible = this.labelB.visible = data.stepIndex !== 2 && data.stepIndex !== 5;
-    this.sectionLabel.visible = data.showSectionLabel;
+    const isEndOn = Math.abs(data.cameraPosition.z) < 0.6 && data.cameraPosition.x > 12;
+    this.labelO1.position.set(data.axialC - 0.28, -0.24, 0.28);
+    this.labelO2.position.set(data.axialD + 0.12, -0.24, 0.28);
+
+    if (data.isAtA) {
+      this.labelO1.element.textContent = 'A = O₁ = O₂';
+      this.labelO1.visible = true;
+      this.labelO2.visible = false;
+      this.labelA.visible = false;
+    } else if (data.isMerged) {
+      this.labelO1.element.textContent = 'O₁ = O₂ = O';
+      this.labelO1.visible = true;
+      this.labelO2.visible = false;
+      this.labelA.visible = !isEndOn;
+    } else {
+      this.labelO1.element.textContent = isEndOn ? 'O₁ (O₂ 的投影)' : 'O₁';
+      this.labelO1.visible = true;
+      this.labelO2.visible = !isEndOn;
+      this.labelA.visible = !isEndOn;
+    }
+
+    this.labelB.visible = !isEndOn;
+    this.sectionLabel.visible = data.showSectionLabel && !isEndOn;
     this.sectionLabel.element.textContent = data.sectionLabelText;
     this.sectionPlaneMaterial.opacity = 0.055 + (data.isAtA ? 0.13 : 0);
 
