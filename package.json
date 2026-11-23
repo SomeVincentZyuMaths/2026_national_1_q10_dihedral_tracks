@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "remotion:preview": "remotion studio src/remotion/index.ts",
-    "remotion:render": "remotion render src/remotion/index.ts DihedralTracks video/archive/2026_q10_dihedral_tracks_remotion_60fps.mp4 --concurrency=6"
+    "remotion:render": "remotion render src/remotion/index.ts DihedralTracks video/archive/2026_q10_dihedral_tracks_remotion_60fps.mp4 --concurrency=6",
+    "remotion:render:realvoice": "remotion render src/remotion/index.ts RealVoiceDihedralTracks video/archive/2026_q10_dihedral_tracks_realvoice_60fps.mp4 --concurrency=6"
   },
   "dependencies": {
     "@hanzi.pro/webfonts-lxgw-wenkai": "^0.1.0",
