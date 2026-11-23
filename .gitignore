@@ -3,4 +3,9 @@ dist/
 .vite/
 *.log
 video/archive/
+video/raw_recordings/
 *.mp4
+*.webm
+audio/*.mp3
+audio/concat.txt
+
